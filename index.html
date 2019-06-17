@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test Sortables Repo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="builder">
+      <div class="builder-header"
+        >
+      <div class="builder-content">
+        <div class="pb-actions">
+          <span
+            class="pb-add-row builder-btn"
+            >add</span>
+        </div>
+
+        <div class="pb-rows">
+          <div class="pb-row" name="pb-row">
+            <div class="builder-row-header">
+              <span class="row-btn pb-handle fas fa-sort">handle</span>
+              <div>Block</div>
+              <span
+                onclick="handleRemoveClick(this)"
+                class="row-btn row-btn-right pb-remove fas fa-trash"
+              >remove</span>
+            </div>
+            <div class="pb-container">
+              <div class="builder-row-content">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="template-container">
+          <!-- Block Template -->
+          <div class="pb-row" name="pb-row">
+            <div class="builder-row-header">
+              <span class="row-btn pb-handle fas fa-sort">handle</span>
+              <div>Block</div>
+              <span
+                onclick="handleRemoveClick(this)"
+                class="row-btn row-btn-right pb-remove fas fa-trash"
+              >remove</span>
+            </div>
+            <div class="pb-container">
+              <div class="builder-row-content"></div>
+            </div>
+          </div>
+          <!-- Widget Template -->
+          <div
+            class="pb-widget-preview"
+          >
+            <span
+              class="row-btn btn-widget pb-handle-widget fas fa-sort"
+            ></span>
+            <div></div>
+            <span
+              class="row-btn btn-widget pb-remove fas fa-trash"
+              onclick="handleWidgetRemove(this)"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-inner">
+            <div class="modal-toolbar">
+                <h2 class="modal-title">Wähle ein Widget aus</h2>
+                <i id="pb-modal-close" class="fa fa-times"></i>
+            </div>
+            <div class="modal-tabs">
+                <div class="modal-tab widgets-tab active-tab"><i class="tab-icon fas fa-hammer"></i> Bausteine</div>
+                <div class="modal-tab background-tab"><i class="tab-icon fas fa-fill"></i>
+                    Hintergründe</div>
+                <div class="modal-tab special-tab"><i class="tab-icon fas fa-star"></i> Specials
+                </div>
+            </div>
+            <div class="modal-content widgets-tab active-content">
+                <div class="pb-widget" data-template="[pb_text][/pb_text]" data-type="content-block"><i
+                        class="fas fa-heading"></i><span>Text</span></div>
+                <div class="pb-widget" data-template="[pb_link][/pb_link]" data-type="content-block"><i
+                        class="fas fa-link"></i><span>Link</span></div>
+                <div class="pb-widget" data-template="[pb_button][/pb_button]" data-type="content-block"><i
+                        class="fas fa-square"></i><span>Button</span></div>
+                <div class="pb-widget" data-template="[pb_slider][/pb_slider]" data-type="content-block">
+                    <div>
+                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <span>Slider</span>
+                </div>
+                <div class="pb-widget" data-template="[pb_image][/pb_image]" data-type="content-block"><i
+                        class="fas fa-image"></i><span>Image</span></div>
+                <div class="pb-widget" data-template="[pb_video][/pb_video]" data-type="content-block"><i
+                        class="fas fa-video"></i><span>Video</span></div>
+            </div>
+            <div class="modal-content background-tab">
+                <div class="pb-widget" data-template="[pb_color_section][/pb_color_section]" data-type="background">
+                    <i class="fas fa-tint"></i><span>Farb-Sektion</span></div>
+                <div class="pb-widget" data-template="[pb_background_video][/pb_background_video]" data-type="background"><i
+                        class="fas fa-file-video"></i><span>Video-Hintergrund</span></div>
+                <div class="pb-widget" data-template="[pb_fullscreen_background][/pb_fullscreen_background]"
+                    data-type="background"><i class="fas fa-compress"></i><span>Vollbild-Hintergrund</span></div>
+            </div>
+            <div class="modal-content special-tab">
+                <div class="pb-widget" data-template="[pb_masonry][/pb_masonry]" data-type="special"><i
+                        class="fas fa-th-large"></i><span>Masonry</span></div>
+                <div class="pb-widget" data-template="[pb_blog][/pb_blog]" data-type="special"><i
+                        class="fas fa-blog"></i><span>Blog</span></div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End-->
+    <footer>
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="main.js"></script>
+    </footer>
+</body>
+</html>
